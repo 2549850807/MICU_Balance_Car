@@ -1,6 +1,5 @@
 template\gyroscope_driver.o: ..\User\Driver\gyroscope_driver.c
 template\gyroscope_driver.o: ..\User\Driver\gyroscope_driver.h
-template\gyroscope_driver.o: ../User/MyDefine.h
 template\gyroscope_driver.o: ../Core/Inc/main.h
 template\gyroscope_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 template\gyroscope_driver.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -36,6 +35,10 @@ template\gyroscope_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_s
 template\gyroscope_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 template\gyroscope_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 template\gyroscope_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+template\gyroscope_driver.o: ../User/Module/ICM20608/icm20608.h
+template\gyroscope_driver.o: ../User/Module/ICM20608/icm20608_iic.h
+template\gyroscope_driver.o: ../User/Module/BNO08x/bno08x_hal.h
+template\gyroscope_driver.o: ../User/MyDefine.h
 template\gyroscope_driver.o: ../Core/Inc/gpio.h
 template\gyroscope_driver.o: ../Core/Inc/dma.h
 template\gyroscope_driver.o: ../Core/Inc/i2c.h
@@ -53,14 +56,11 @@ template\gyroscope_driver.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 template\gyroscope_driver.o: ..\User\Module\0.91 OLED\oled.h
 template\gyroscope_driver.o: ../User/Module/Grayscale/hardware_iic.h
 template\gyroscope_driver.o: ../User/Module/Grayscale/gw_grayscale_sensor.h
-template\gyroscope_driver.o: ../User/Module/ICM20608/icm20608.h
-template\gyroscope_driver.o: ../User/Module/ICM20608/icm20608_iic.h
 template\gyroscope_driver.o: ../User/Module/Madgwick_Filter/madgwickFilter.h
 template\gyroscope_driver.o: ../User/Module/PID/pid.h
 template\gyroscope_driver.o: ../User/Module/ZDT/Emm_V5.h
 template\gyroscope_driver.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 template\gyroscope_driver.o: ../User/Module/BNO08x/bno08x_hal.h
-template\gyroscope_driver.o: ../User/MyDefine.h
 template\gyroscope_driver.o: ../User/Module/AHT20/AHT20.h
 template\gyroscope_driver.o: ../User/Module/GD25Qxx/gd25qxx.h
 template\gyroscope_driver.o: ../User/Driver/led_driver.h
@@ -72,6 +72,7 @@ template\gyroscope_driver.o: ../User/Driver/encoder_driver.h
 template\gyroscope_driver.o: ../User/Driver/gyroscope_driver.h
 template\gyroscope_driver.o: ../User/Driver/zdt_motor_driver.h
 template\gyroscope_driver.o: ../User/App/led_app.h
+template\gyroscope_driver.o: ../User/MyDefine.h
 template\gyroscope_driver.o: ../User/App/key_app.h
 template\gyroscope_driver.o: ../User/App/uart_app.h
 template\gyroscope_driver.o: ../User/App/oled_app.h

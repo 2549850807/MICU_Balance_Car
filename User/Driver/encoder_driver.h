@@ -1,7 +1,7 @@
 #ifndef __ENCODER_DRIVER_H__
 #define __ENCODER_DRIVER_H__
 
-#include "MyDefine.h"
+#include "main.h"
 
 // 编码器每转一圈的脉冲数 (PPR)
 #define ENCODER_PPR (11 * 30 * 4) // 13线/相, 20倍减速比, 4倍频

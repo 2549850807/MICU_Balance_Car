@@ -63,7 +63,6 @@ template\bno08x_hal.o: ../User/Module/BNO08x/bno08x_hal.h
 template\bno08x_hal.o: ../User/Module/AHT20/AHT20.h
 template\bno08x_hal.o: ../User/Module/GD25Qxx/gd25qxx.h
 template\bno08x_hal.o: ../User/Driver/led_driver.h
-template\bno08x_hal.o: ../User/MyDefine.h
 template\bno08x_hal.o: ../User/Driver/key_driver.h
 template\bno08x_hal.o: ../User/Driver/uart_driver.h
 template\bno08x_hal.o: ../User/Driver/oled_driver.h
@@ -72,6 +71,7 @@ template\bno08x_hal.o: ../User/Driver/encoder_driver.h
 template\bno08x_hal.o: ../User/Driver/gyroscope_driver.h
 template\bno08x_hal.o: ../User/Driver/zdt_motor_driver.h
 template\bno08x_hal.o: ../User/App/led_app.h
+template\bno08x_hal.o: ../User/MyDefine.h
 template\bno08x_hal.o: ../User/App/key_app.h
 template\bno08x_hal.o: ../User/App/uart_app.h
 template\bno08x_hal.o: ../User/App/oled_app.h

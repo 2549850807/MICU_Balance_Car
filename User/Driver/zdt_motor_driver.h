@@ -1,7 +1,8 @@
 #ifndef __ZDT_MOTOR_DRIVER_H__
 #define __ZDT_MOTOR_DRIVER_H__
 
-#include "MyDefine.h"
+#include "main.h"
+#include "Emm_V5.h"
 
 /* 电机控制宏定义 */
 #define MOTOR_X_ADDR        0x02          // X轴电机地址

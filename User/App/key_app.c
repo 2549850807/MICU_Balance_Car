@@ -11,9 +11,6 @@ void Key_Task()
     ebtn_process(HAL_GetTick());
 }
 
-extern MOTOR left_motor;
-extern MOTOR right_motor;
-
 /* 处理按键事件的回调函数 */
 void my_handle_key_event(struct ebtn_btn *btn, ebtn_evt_t evt) {
     uint16_t key_id = btn->key_id;                 // 获取触发事件的按键 ID

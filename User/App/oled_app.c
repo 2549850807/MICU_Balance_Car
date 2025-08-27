@@ -7,12 +7,6 @@ void Oled_Init(void)
   OLED_Clear();
 }
 
-extern MOTOR left_motor;
-extern MOTOR right_motor;
-
-extern Encoder left_encoder;
-extern Encoder right_encoder;
-
 void Oled_Task(void)
 {
 //  /* ²âÊÔ»Ò¶È´«¸ÐÆ÷ */

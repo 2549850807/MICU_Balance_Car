@@ -1,7 +1,7 @@
 #ifndef __MOTOR_DRIVER_H
 #define __MOTOR_DRIVER_H
 
-#include "MyDefine.h"
+#include "main.h"
 
 // DRV8871DDA 电机配置结构体
 typedef struct MOTOR_Config
@@ -16,7 +16,7 @@ typedef struct MOTOR_Config
 
 
 // 电机结构体
-typedef struct MOTOR
+typedef struct
 {
     MOTOR_Config config;
     int speed;
