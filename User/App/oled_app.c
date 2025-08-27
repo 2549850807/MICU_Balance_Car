@@ -34,8 +34,8 @@ void Oled_Task(void)
 //  Oled_Printf(0, 2, "  Yaw:%.2f    ", icm20608.Yaw);
 //  Uart_Printf(DEBUG_UART, "Euler: %.2f, %.2f, %.2f\n", icm20608.Roll, icm20608.Pitch, icm20608.Yaw);
   
-//  /* 测试速度环 */
-//  Uart_Printf(DEBUG_UART, "%.2f,%.2f,%.2f,%.2f\r\n", pid_speed_left.target, left_encoder.speed_cm_s, pid_speed_right.target, right_encoder.speed_cm_s);
+  /* 测试速度环 */
+  Uart_Printf(DEBUG_UART, "%.2f,%.2f,%.2f,%.2f\r\n", pid_speed_left.target, left_encoder.speed_cm_s, pid_speed_right.target, right_encoder.speed_cm_s);
 
 //    /* 测试张大头步进电机 */
 //    Oled_Printf(0, 0, "== ZDT Motor ==");

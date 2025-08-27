@@ -14,16 +14,16 @@ PID_T pid_speed_right; // 右轮速度环
 
 /* PID 参数定义 */
 PidParams_t pid_params_left = {
-    .kp = 55.0f * 0.6f,        
-    .ki = 4.5000f,      
+    .kp = 17.5f * 0.6f,        
+    .ki = 1.0000f,      
     .kd = 0.00f,      
     .out_min = -999.0f,
     .out_max = 999.0f,
 };
 
 PidParams_t pid_params_right = {
-    .kp = 55.0f * 0.6f,        
-    .ki = 4.5000f,      
+    .kp = 17.5f * 0.6f,        
+    .ki = 1.0000f,      
     .kd = 0.00f,      
     .out_min = -999.0f,
     .out_max = 999.0f,

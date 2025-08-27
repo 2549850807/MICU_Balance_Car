@@ -23,7 +23,26 @@ void my_handle_key_event(struct ebtn_btn *btn, ebtn_evt_t evt) {
     // 根据事件类型进行处理
     switch (evt) {
         case EBTN_EVT_ONPRESS: // 按下事件 (消抖成功后触发一次)
-            Uart_Printf(&huart5, "Key%d Down\r\n", (int)key_id);
+            switch(key_id)
+            {
+              case 1:
+                pid_running = 1;
+                break;
+              case 2:
+                pid_set_target(&pid_speed_left, 100);
+                pid_set_target(&pid_speed_right, 100);
+                break;
+              case 3:
+                pid_set_target(&pid_speed_left, 20);
+                pid_set_target(&pid_speed_right, 20);
+                break;
+              case 4:
+                pid_set_target(&pid_speed_left, 100);
+                pid_set_target(&pid_speed_right, -100);
+                break;
+            }
+            
+            Uart_Printf(DEBUG_UART, "Key%d Down\r\n", (int)key_id);
             led_buf[key_id - 1] ^= 1;
             break;
         case EBTN_EVT_ONRELEASE: // 释放事件 (消抖成功后触发一次)
@@ -33,6 +52,9 @@ void my_handle_key_event(struct ebtn_btn *btn, ebtn_evt_t evt) {
 
             break;
         case EBTN_EVT_KEEPALIVE: // 保持活动/长按事件 (按下持续时间超过阈值后，按周期触发)
+            pid_running = 0;
+            Motor_Stop(&left_motor);
+            Motor_Stop(&right_motor);
             led_buf[key_id - 1] ^= 1;
             break;
 

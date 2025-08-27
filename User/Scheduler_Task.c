@@ -28,6 +28,8 @@ void System_Init(void)
 
 unsigned char key_timer10ms = 0;
 unsigned char gyroscope_timer10ms = 0;
+unsigned char encoder_timer10ms = 0;
+unsigned char pid_timer10ms = 0;
 
 // TIM2 中断服务函数（1ms 中断）
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -46,5 +48,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   {
     gyroscope_timer10ms = 0;
     Gyroscope_Task();
+  }
+  
+  /* 编码器任务 */
+  if(++encoder_timer10ms >= 10)
+  {
+    encoder_timer10ms = 0;
+    Encoder_Task();
+  }
+  
+  /* PID 计算任务 */
+  if(++pid_timer10ms >= 10)
+  {
+    pid_timer10ms = 0;
+    PID_Task();
   }
 }

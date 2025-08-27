@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\User\Module\0.91 OLED;..\User\Module\AHT20;..\User\Module\BNO08x;..\User\Module\Ebtn;..\User\Module\GD25Qxx;..\User\Module\Grayscale;..\User\Module\ICM20608;..\User\Module\Madgwick_Filter;..\User\Module\PID;..\User\Module\Ringbuffer;..\User\Module\ZDT;..\User\Driver;..\User\App;..\User</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\User\Module\0.91 OLED;../User/Module/AHT20;../User/Module/BNO08x;../User/Module/Ebtn;../User/Module/GD25Qxx;../User/Module/Grayscale;../User/Module/ICM20608;../User/Module/Madgwick_Filter;../User/Module/PID;../User/Module/Ringbuffer;../User/Module/ZDT;../User/Driver;../User/App;../User</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
