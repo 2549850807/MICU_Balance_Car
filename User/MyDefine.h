@@ -27,8 +27,6 @@
 
 #include "icm20608.h"
 
-#include "madgwickFilter.h"
-
 #include "pid.h"
 
 #include "Emm_V5.h"

@@ -3,6 +3,8 @@
 
 #include "MyDefine.h"
 
+
+
 // PID参数结构体
 typedef struct
 {
@@ -22,6 +24,8 @@ extern int basic_speed;
 
 extern PID_T pid_speed_left;  // 左轮速度环
 extern PID_T pid_speed_right; // 右轮速度环
+
+extern PID_T pid_balance;
 
 
 #endif

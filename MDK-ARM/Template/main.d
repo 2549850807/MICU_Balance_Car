@@ -54,12 +54,10 @@ template\main.o: ../User/Module/Grayscale/hardware_iic.h
 template\main.o: ../User/Module/Grayscale/gw_grayscale_sensor.h
 template\main.o: ../User/Module/ICM20608/icm20608.h
 template\main.o: ../User/Module/ICM20608/icm20608_iic.h
-template\main.o: ../User/Module/Madgwick_Filter/madgwickFilter.h
 template\main.o: ../User/Module/PID/pid.h
 template\main.o: ../User/Module/ZDT/Emm_V5.h
 template\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 template\main.o: ../User/Module/BNO08x/bno08x_hal.h
-template\main.o: ../User/MyDefine.h
 template\main.o: ../User/Module/AHT20/AHT20.h
 template\main.o: ../User/Module/GD25Qxx/gd25qxx.h
 template\main.o: ../User/Driver/led_driver.h
@@ -71,6 +69,7 @@ template\main.o: ../User/Driver/encoder_driver.h
 template\main.o: ../User/Driver/gyroscope_driver.h
 template\main.o: ../User/Driver/zdt_motor_driver.h
 template\main.o: ../User/App/led_app.h
+template\main.o: ../User/MyDefine.h
 template\main.o: ../User/App/key_app.h
 template\main.o: ../User/App/uart_app.h
 template\main.o: ../User/App/oled_app.h

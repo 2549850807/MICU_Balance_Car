@@ -1,7 +1,5 @@
 #include "bno08x_hal.h"
-#include <math.h>
-#include <string.h>
-#include "main.h" // 包含GPIO引脚定义
+
 
 extern I2C_HandleTypeDef hi2c1;  // 获取I2C句柄
 extern UART_HandleTypeDef huart1; // 获取串口句柄用于调试输出

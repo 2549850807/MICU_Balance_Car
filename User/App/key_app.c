@@ -26,16 +26,16 @@ void my_handle_key_event(struct ebtn_btn *btn, ebtn_evt_t evt) {
                 pid_running = 1;
                 break;
               case 2:
-                pid_set_target(&pid_speed_left, 100);
-                pid_set_target(&pid_speed_right, 100);
+                pid_set_target(&pid_speed_left, 500);
+                pid_set_target(&pid_speed_right, 500);
                 break;
               case 3:
-                pid_set_target(&pid_speed_left, 20);
-                pid_set_target(&pid_speed_right, 20);
+                pid_set_target(&pid_speed_left, 1000);
+                pid_set_target(&pid_speed_right, 1000);
                 break;
               case 4:
-                pid_set_target(&pid_speed_left, 100);
-                pid_set_target(&pid_speed_right, -100);
+                pid_set_target(&pid_speed_left, -500);
+                pid_set_target(&pid_speed_right, -500);
                 break;
             }
             
@@ -49,9 +49,6 @@ void my_handle_key_event(struct ebtn_btn *btn, ebtn_evt_t evt) {
 
             break;
         case EBTN_EVT_KEEPALIVE: // 保持活动/长按事件 (按下持续时间超过阈值后，按周期触发)
-            pid_running = 0;
-            Motor_Stop(&left_motor);
-            Motor_Stop(&right_motor);
             led_buf[key_id - 1] ^= 1;
             break;
 

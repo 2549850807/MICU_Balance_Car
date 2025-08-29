@@ -55,12 +55,10 @@ template\scheduler_task.o: ../User/Module/Grayscale/hardware_iic.h
 template\scheduler_task.o: ../User/Module/Grayscale/gw_grayscale_sensor.h
 template\scheduler_task.o: ../User/Module/ICM20608/icm20608.h
 template\scheduler_task.o: ../User/Module/ICM20608/icm20608_iic.h
-template\scheduler_task.o: ../User/Module/Madgwick_Filter/madgwickFilter.h
 template\scheduler_task.o: ../User/Module/PID/pid.h
 template\scheduler_task.o: ../User/Module/ZDT/Emm_V5.h
 template\scheduler_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 template\scheduler_task.o: ../User/Module/BNO08x/bno08x_hal.h
-template\scheduler_task.o: ../User/MyDefine.h
 template\scheduler_task.o: ../User/Module/AHT20/AHT20.h
 template\scheduler_task.o: ../User/Module/GD25Qxx/gd25qxx.h
 template\scheduler_task.o: ../User/Driver/led_driver.h
@@ -72,6 +70,7 @@ template\scheduler_task.o: ../User/Driver/encoder_driver.h
 template\scheduler_task.o: ../User/Driver/gyroscope_driver.h
 template\scheduler_task.o: ../User/Driver/zdt_motor_driver.h
 template\scheduler_task.o: ../User/App/led_app.h
+template\scheduler_task.o: ../User/MyDefine.h
 template\scheduler_task.o: ../User/App/key_app.h
 template\scheduler_task.o: ../User/App/uart_app.h
 template\scheduler_task.o: ../User/App/oled_app.h

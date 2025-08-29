@@ -7,8 +7,8 @@ void Motor_Init(void)
 {
     Uart_Printf(DEBUG_UART, "Motor_Init ......\r\n");
   
-    Motor_Config_Init(&left_motor, &htim1, TIM_CHANNEL_2, &htim1, TIM_CHANNEL_1, 1, 50);
-    Motor_Config_Init(&right_motor, &htim1, TIM_CHANNEL_4, &htim1, TIM_CHANNEL_3, 0, 50);
+    Motor_Config_Init(&left_motor, &htim1, TIM_CHANNEL_2, &htim1, TIM_CHANNEL_1, 1, 60);
+    Motor_Config_Init(&right_motor, &htim1, TIM_CHANNEL_4, &htim1, TIM_CHANNEL_3, 0, 60);
 }
 
 void Motor_Task(void)

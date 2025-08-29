@@ -18,6 +18,7 @@ void Encoder_Driver_Init(Encoder* encoder, TIM_HandleTypeDef *htim, unsigned cha
   encoder->count = 0;
   encoder->total_count = 0;
   encoder->speed_cm_s = 0.0f;
+  encoder->rpm = 0.0f;
 }
 
 /**
@@ -40,4 +41,8 @@ void Encoder_Driver_Update(Encoder* encoder)
   // 5. 计算速度 (cm/s)
   // 速度 = (计数值 / PPR) * 周长 / 采样时间
   encoder->speed_cm_s = (float)encoder->count / ENCODER_PPR * WHEEL_CIRCUMFERENCE_CM / SAMPLING_TIME_S;
+  
+  // 6. 计算RPM (每分钟转数)
+  // RPM = (计数值 / PPR) * (60 / 采样时间)
+  encoder->rpm = (float)encoder->count / ENCODER_PPR * (60.0f / SAMPLING_TIME_S);
 }

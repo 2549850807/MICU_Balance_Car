@@ -35,7 +35,6 @@
 "template\hardware_iic.o"
 "template\icm20608.o"
 "template\icm20608_iic.o"
-"template\madgwickfilter.o"
 "template\pid.o"
 "template\emm_v5.o"
 "template\bno08x_hal.o"

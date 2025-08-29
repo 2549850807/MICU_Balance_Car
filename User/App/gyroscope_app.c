@@ -10,8 +10,6 @@ float frist_yaw = 0;
 
 #define ICM20608_TIME 0.0004f
 
-uint32_t icm20608_first_tick;
-
 ICM20608 icm20608;
 
 void Gyroscope_Init(void)
@@ -20,36 +18,35 @@ void Gyroscope_Init(void)
   
   ICM206xx_Init();
   
-  icm20608_first_tick = HAL_GetTick();
+  // 初始化互补滤波器
+  // alpha = 0.02 (陀螺仪权重 98%, 加速度计权重 2%)
+  // 采样频率 = 100Hz (10ms 一次)
+  Gyroscope_Filter_Init(0.02f, 100.0f);
 }
 
 void Gyroscope_Task(void)
 {
-  ICM206xx_Read_Data(&icm20608.gyro,&icm20608.accel,&icm20608.temperature);
-  PreprocessForMadgwick(&icm20608.gyro, &icm20608.accel);
-  imu_filter(icm20608.accel.x, icm20608.accel.y, icm20608.accel.z, icm20608.gyro.x, icm20608.gyro.y, icm20608.gyro.z);
-  eulerAngles(q_est, &icm20608.Roll, &icm20608.Pitch, &icm20608.Yaw);
+  // 读取原始数据
+  ICM206xx_Read_Data(&icm20608.gyro, &icm20608.accel, &icm20608.temperature);
+  
+  // 计算欧拉角
+  Calculate_Euler_Angles(&icm20608.gyro, &icm20608.accel, &icm20608.euler);
   
   /* 将当前位置归零 */
   if(first_gyroscope_flag == 0)
   {
     first_gyroscope_flag = 1;
-    frist_roll = icm20608.Roll;
-    frist_pitch = icm20608.Pitch;
-    frist_yaw = icm20608.Yaw;
+    frist_roll = icm20608.euler.pitch;
+    frist_pitch = icm20608.euler.roll;
+    frist_yaw = icm20608.euler.yaw;
   }
   
-  icm20608.Roll = icm20608.Roll - frist_roll;
-  icm20608.Pitch = icm20608.Pitch - frist_pitch;
-  icm20608.Yaw = icm20608.Yaw - frist_yaw;
+  icm20608.Roll = icm20608.euler.pitch - frist_roll;
+  icm20608.Pitch = icm20608.euler.roll - frist_pitch;
+  icm20608.Yaw = icm20608.euler.yaw - frist_yaw;
   
   icm20608.Yaw = convert_to_continuous_yaw(icm20608.Yaw); 
-  
-  if(icm20608.Yaw >= 0)
-    icm20608.Yaw -= (HAL_GetTick() - icm20608_first_tick) * ICM20608_TIME;
-  else
-    icm20608.Yaw += (HAL_GetTick() - icm20608_first_tick) * ICM20608_TIME;
-  
+
 }
 
 #else
@@ -79,8 +76,8 @@ void Gyroscope_Init(void)
   enableRotationVector(100);        // 启用旋转向量，100ms间隔
   Uart_Printf(DEBUG_UART, "已启用旋转向量报告 (100ms)\n");
 
-  // enableAccelerometer(50);          // 启用加速度计，50ms间隔
-  // Uart_Printf(DEBUG_UART, "已启用加速度计报告 (50ms)\n");
+//  enableAccelerometer(50);          // 启用加速度计，50ms间隔
+//  Uart_Printf(DEBUG_UART, "已启用加速度计报告 (50ms)\n");
 
   // enableGyro(50);                   // 启用陀螺仪，50ms间隔
   // Uart_Printf(DEBUG_UART, "已启用陀螺仪报告 (50ms)\n");
@@ -136,9 +133,9 @@ void Gyroscope_Task(void)
       bno08x.Yaw = convert_to_continuous_yaw(bno08x.Yaw); 
       
       // 2. 加速度数据（可选）
-      // float accel_x = getAccelX();
-      // float accel_y = getAccelY();
-      // float accel_z = getAccelZ();
+//      float accel_x = getAccelX();
+//      float accel_y = getAccelY();
+//      float accel_z = getAccelZ();
       // Uart_Printf(&huart1, "Accel: %.3f, %.3f, %.3f g\n", accel_x, accel_y, accel_z);
 
       // 3. 陀螺仪数据（可选）

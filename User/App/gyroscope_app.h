@@ -7,13 +7,15 @@
 
 #if BNO08x_ON == 0
 
-  typedef struct ICM20608 {
-    Vector3f gyro;
-    Vector3f accel;
-    float Roll;
-    float Pitch;
-    float Yaw;
-    float temperature;
+  typedef struct ICM20608 
+  {
+    Vector3f gyro;        // 陀螺仪原始数据 (deg/s)
+    Vector3f accel;       // 加速度计原始数据 (g)
+    EulerAngles_t euler;  // 解算后的欧拉角 (deg)
+    float Roll;           // 兼容性变量 - 横滚角
+    float Pitch;          // 兼容性变量 - 俯仰角
+    float Yaw;            // 兼容性变量 - 偏航角
+    float temperature;    // 温度 (℃)
   } ICM20608;
 
   extern ICM20608 icm20608;

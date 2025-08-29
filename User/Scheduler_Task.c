@@ -47,20 +47,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   if(++gyroscope_timer10ms >= 10)
   {
     gyroscope_timer10ms = 0;
-    Gyroscope_Task();
-  }
-  
-  /* 编码器任务 */
-  if(++encoder_timer10ms >= 10)
-  {
-    encoder_timer10ms = 0;
     Encoder_Task();
-  }
-  
-  /* PID 计算任务 */
-  if(++pid_timer10ms >= 10)
-  {
-    pid_timer10ms = 0;
+    Gyroscope_Task();
     PID_Task();
   }
 }
+
+

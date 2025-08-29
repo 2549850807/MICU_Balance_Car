@@ -23,6 +23,7 @@ typedef struct
   int16_t count;          // 当前采样周期内的原始计数值
   int32_t total_count;    // 累计总计数值
   float speed_cm_s;     // 计算出的速度 (cm/s)
+  float rpm;            // 计算出的转速 (RPM - 每分钟转数)
 } Encoder;
 
 void Encoder_Driver_Init(Encoder* encoder, TIM_HandleTypeDef *htim, unsigned char reverse);
